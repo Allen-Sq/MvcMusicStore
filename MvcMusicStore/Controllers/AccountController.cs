@@ -12,6 +12,9 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
+    /// <summary>
+    /// 响应与账户相关的请求，如登录和注册
+    /// </summary>
     [Authorize]
     public class AccountController : Controller
     {
