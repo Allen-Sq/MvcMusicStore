@@ -173,6 +173,9 @@
     <Compile Include="Models\MusicStoreDB.cs" />
     <Compile Include="Models\MusicStoreDbInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\ShoppingCartViewModel\ProductModel.cs" />
+    <Compile Include="Samples\ShoppingCartViewModel\ShoppingCartController.cs" />
+    <Compile Include="Samples\ShoppingCartViewModel\ShoppingCartViewModel.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +231,7 @@
     <Content Include="Views\StoreManager\Details.cshtml" />
     <Content Include="Views\StoreManager\Edit.cshtml" />
     <Content Include="Views\StoreManager\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
