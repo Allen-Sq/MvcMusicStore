@@ -15,12 +15,13 @@ namespace MvcMusicStore.Controllers
     {
         /// <summary>
         /// 负责决定当浏览网站首页时触发的事件
-        /// 该方法渲染了Home Index视图
+        /// 该方法渲染了Home Index视图，视图则使用渲染过的视图模板生成html，然后该方法返回html给浏览器
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
         {
-            return View("about");//重写隐式约定中的视图选择逻辑，使首页显示其他页面
+            //return View("about");//重写隐式约定中的视图选择逻辑，使首页显示其他页面
+            return View();
         }
 
         //使用ViewBag向视图传递少量数据
@@ -33,6 +34,8 @@ namespace MvcMusicStore.Controllers
             return View();
         }
 
+        //控制器的 Action 方法通过返回的 ActionResule 传送模型对象给视图
+        //这就允许控制器可以将所有需要的数据打包，然后传送给视图模板，以便生成适当的 HTML 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Genre>
+           @*告诉视图引擎模式是一个包含多个 Genre 对象的集合，我们使用 IEnumerable<Genre> 而不是 List<Genre>，因为这样更通用，可以允许我们在以后改变集合为任何实现 IEnumerable 接口的集合。*@
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Browse Genres</h3>
+<p>
+    Select form @Model.Count() genres:
+</p>
+<ul>
+    @foreach (var genre in Model)
+    {
+        @*<li>@genre.Name</li>*@
+        <li>@Html.ActionLink(genre.Name, "Browse", new { genre=genre.Name})</li>
+               //访问 /Store 的时候，将会看到一个分类的列表，每一个分类都是一个超级链接，当点击链接的时候，将会被导航到 /Store/Browse?genre=[genre] 的地址
+    }
+</ul>
