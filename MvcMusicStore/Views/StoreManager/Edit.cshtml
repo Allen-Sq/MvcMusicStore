@@ -11,8 +11,8 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Album</h4>
+    <fieldset class="form-horizontal">
+        <legend>Album</legend>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.AlbumId)
@@ -62,7 +62,7 @@
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
-    </div>
+    </fieldset>
 }
 
 <div>
