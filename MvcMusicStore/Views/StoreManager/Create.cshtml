@@ -11,14 +11,16 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Album</h4>
-        <hr />
+    <fieldset class="form-horizontal">
+        <legend>Album</legend>
         @Html.ValidationSummary(true)
 
         <div class="form-group">
             @Html.LabelFor(model => model.GenreId, "GenreId", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                @*Html.DropDownList 方法需要两个参数，从哪里获取显示用的列表，和哪一个值需要被预先选中，
+                    方法的第一个参数， GenreId，告诉DropDownList 从模型对象或者 ViewBag 对象中寻找名为 GenreId 的属性值，
+                    第二个参数用来指出下拉列表默认选中的值。这是创建专辑的表单，所以，没有需要预先选中的值，这里传递了一个 String.Empty*@
                 @Html.DropDownList("GenreId", String.Empty)
                 @Html.ValidationMessageFor(model => model.GenreId)
             </div>
@@ -57,11 +59,11 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-10" style="margin-bottom:10px;">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
+    </fieldset>
 }
 
 <div>

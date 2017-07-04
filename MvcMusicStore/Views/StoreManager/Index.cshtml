@@ -1,5 +1,19 @@
 ﻿@model IEnumerable<MvcMusicStore.Models.Album>
 
+@helper Truncate(string input, int length) {
+    /*助手方法取得一个字符串和一个最大长度，如果字符串长度小于指定的长度，就直接返回这个串，
+     *如果大于最大长度，那么，就截断字符串，然后在剩下的最后增加 "…" 。
+     * 如果希望在多个视图中使用这个扩展的助手方法，可以写一个帮助类helpers*/
+    if (input.Length <= length)
+            {
+                @input
+            }
+            else
+            {
+                @input.Substring(0,length)<text>...</text>
+            }
+     }
+
 @{
     ViewBag.Title = "Index";
 }
@@ -32,13 +46,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Artist.Name)
+            @*@Html.DisplayFor(modelItem => item.Artist.Name)*@
+            @Truncate(item.Artist.Name, 25)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Genre.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @*@Html.DisplayFor(modelItem => item.Title)*@
+            @Truncate(item.Title,25)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Price)
