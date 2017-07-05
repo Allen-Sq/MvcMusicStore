@@ -10,6 +10,8 @@ using MvcMusicStore.Models;
 
 namespace MvcMusicStore.Controllers
 {
+    //基于角色的授权,设置访问 StoreManager 任何 Action 的用户必须拥有 Administrator 的角色
+    [Authorize(Roles = "Administrator")]
     public class StoreManagerController : Controller
     {
         //手工在控制器中增加数据访问的实体上下文对象

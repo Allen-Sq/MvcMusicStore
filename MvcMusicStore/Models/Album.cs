@@ -31,5 +31,8 @@ namespace MvcMusicStore.Models
         public virtual Genre Genre { get; set; }
         public virtual Artist Artist { get; set; }
 
+        //增加一个导航属性，以便EF知道关联的信息
+        public virtual List<OrderDetail> OrderDetails { get; set; }
+
     }
 }
