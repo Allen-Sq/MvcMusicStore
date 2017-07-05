@@ -91,3 +91,8 @@ ASP.NET MVC3 支架模板还提供了内建的客户端验证，不需要我们�
 <connectionStrings>
 <add name="LocalSqlServer" connectionString="server=.;database=aspnetdb;uid=sa;pwd=sa" providerName="System.Data.SqlClient"/>
 </connectionStrings>
+
+6、合并购物车
+在匿名购物的时候，当用户点击结账 Checkout 按钮，用户会被要求注册和登陆，用户会希望继续使用原来的购物车，所以，在匿名用户登录之后，我们需要维护购物车。
+实际上非常简单，因为 ShoppingCart 类已经提供了一个方法，通过当前的用户名来获取购物车中所有的项目，在用户注册登录以后，我们只需要调用这个方法。
+打开在成员管理和授权中添加的 AccountController 类，增加一个 using 来引用 MvcMusicStore.Models，然后，增加 MigrateShoppingCart 方法。
